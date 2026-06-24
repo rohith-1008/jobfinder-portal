@@ -1,0 +1,4 @@
+Flask
+snowflake-connector-python
+requests
+pandas

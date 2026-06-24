@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>JobFinder Portal</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static',
+    filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="navbar">
+
+    <h2>JobFinder Portal</h2>
+
+    <div>
+
+        <a href="/">Home</a>
+
+        <a href="/history">History</a>
+
+        <a href="/saved-jobs">Saved Jobs</a>
+
+        <a href="/dashboard">Dashboard</a>
+
+        <a href="/analytics">Analytics</a>
+
+        <a href="/export">Export CSV</a>
+
+        <button
+        class="theme-btn"
+        onclick="toggleTheme()">
+
+        🌙
+
+        </button>
+
+    </div>
+
+</div>
+
+<div class="container">
+
+    <div class="search-box">
+
+        <h1>Find Your Dream Job</h1>
+
+        <form
+        action="/search"
+        method="POST">
+
+            <input
+            type="text"
+            name="skill"
+            placeholder="Python Developer"
+            required>
+
+            <select name="location">
+
+                <option value="">
+                    All Locations
+                </option>
+
+                <option value="Remote">
+                    Remote
+                </option>
+
+                <option value="India">
+                    India
+                </option>
+
+                <option value="USA">
+                    USA
+                </option>
+
+                <option value="Europe">
+                    Europe
+                </option>
+
+            </select>
+
+            <button>
+
+                Search Jobs
+
+            </button>
+
+        </form>
+
+        <div class="loader"
+        id="loader">
+
+        Searching Jobs...
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="{{ url_for(
+'static',
+filename='script.js'
+) }}"></script>
+
+</body>
+
+</html>

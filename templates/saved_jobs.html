@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Saved Jobs</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="navbar">
+
+<h2>JobFinder Portal</h2>
+
+<div>
+
+<a href="/">Home</a>
+
+<a href="/history">History</a>
+
+<a href="/saved-jobs">Saved Jobs</a>
+
+</div>
+
+</div>
+
+<div class="container">
+
+<h1>Saved Jobs</h1>
+
+{% for job in jobs %}
+
+<div class="job-card">
+
+<h2>{{ job[1] }}</h2>
+
+<p><b>Company:</b> {{ job[2] }}</p>
+
+<p><b>Location:</b> {{ job[3] }}</p>
+
+<a
+class="apply-btn"
+href="{{ job[4] }}"
+target="_blank">
+
+Apply Now
+
+</a>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+</body>
+</html>

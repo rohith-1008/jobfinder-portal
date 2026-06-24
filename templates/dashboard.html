@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Dashboard</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static',
+    filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="navbar">
+
+    <h2>JobFinder Portal</h2>
+
+    <div>
+
+        <a href="/">Home</a>
+
+        <a href="/history">History</a>
+
+        <a href="/saved-jobs">Saved Jobs</a>
+
+        <a href="/dashboard">Dashboard</a>
+
+        <a href="/analytics">Analytics</a>
+
+        <a href="/export">Export CSV</a>
+
+        <button
+        class="theme-btn"
+        onclick="toggleTheme()">
+
+        🌙
+
+        </button>
+
+    </div>
+
+</div>
+
+<div class="container">
+
+    <h1>Dashboard</h1>
+
+    <div class="stats-container">
+
+        <div class="stat-card">
+
+            <h2>Total Jobs Stored</h2>
+
+            <h1>{{ total_jobs }}</h1>
+
+        </div>
+
+        <div class="stat-card">
+
+            <h2>Saved Jobs</h2>
+
+            <h1>{{ total_saved_jobs }}</h1>
+
+        </div>
+
+        <div class="stat-card">
+
+            <h2>Most Searched Skill</h2>
+
+            {% if top_skill %}
+                <h1>{{ top_skill[0] }}</h1>
+            {% else %}
+                <h1>No Data</h1>
+            {% endif %}
+
+        </div>
+
+        <div class="stat-card">
+
+            <h2>Total Skills Covered</h2>
+
+            <h1>{{ total_skills }}</h1>
+
+        </div>
+
+    </div>
+
+    <div class="stat-card"
+    style="margin-top:20px;">
+
+        <h2>Latest Search Date</h2>
+
+        {% if latest_search %}
+            <h3>{{ latest_search }}</h3>
+        {% else %}
+            <h3>No Search Data</h3>
+        {% endif %}
+
+    </div>
+
+</div>
+
+<script src="{{ url_for(
+'static',
+filename='script.js'
+) }}"></script>
+
+</body>
+
+</html>

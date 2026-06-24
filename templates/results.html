@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Job Results</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static',
+    filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="navbar">
+
+    <h2>JobFinder Portal</h2>
+
+    <div>
+
+        <a href="/">Home</a>
+
+        <a href="/history">History</a>
+
+        <a href="/saved-jobs">Saved Jobs</a>
+
+        <a href="/dashboard">Dashboard</a>
+
+        <a href="/analytics">Analytics</a>
+
+        <a href="/export">Export CSV</a>
+
+        <button
+        class="theme-btn"
+        onclick="toggleTheme()">
+
+        🌙
+
+        </button>
+
+    </div>
+
+</div>
+
+<div class="container">
+
+    <h1>Job Results</h1>
+
+    {% if jobs %}
+
+        {% for job in jobs %}
+
+        <div class="job-card">
+
+            <h2>{{ job.title }}</h2>
+
+            <p>
+
+                <b>Company:</b>
+
+                {{ job.company_name }}
+
+            </p>
+
+            <p>
+
+                <b>Location:</b>
+
+                {{ job.candidate_required_location }}
+
+            </p>
+
+            <div class="buttons">
+
+                <a
+                class="apply-btn"
+                href="{{ job.url }}"
+                target="_blank">
+
+                Apply Now
+
+                </a>
+
+                <form
+                action="/save-job"
+                method="POST">
+
+                    <input
+                    type="hidden"
+                    name="title"
+                    value="{{ job.title }}">
+
+                    <input
+                    type="hidden"
+                    name="company"
+                    value="{{ job.company_name }}">
+
+                    <input
+                    type="hidden"
+                    name="location"
+                    value="{{ job.candidate_required_location }}">
+
+                    <input
+                    type="hidden"
+                    name="url"
+                    value="{{ job.url }}">
+
+                    <button
+                    class="save-btn">
+
+                    Save Job
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+    {% else %}
+
+        <div class="no-data">
+
+            No Jobs Found
+
+        </div>
+
+    {% endif %}
+
+</div>
+
+<script src="{{ url_for(
+'static',
+filename='script.js'
+) }}"></script>
+
+</body>
+
+</html>

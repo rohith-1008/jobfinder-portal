@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Analytics</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static',
+    filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="navbar">
+
+    <h2>JobFinder Portal</h2>
+
+    <div>
+
+        <a href="/">Home</a>
+
+        <a href="/history">History</a>
+
+        <a href="/saved-jobs">Saved Jobs</a>
+
+        <a href="/dashboard">Dashboard</a>
+
+        <a href="/analytics">Analytics</a>
+
+        <a href="/export">Export CSV</a>
+
+        <button
+        class="theme-btn"
+        onclick="toggleTheme()">
+
+        🌙
+
+        </button>
+
+    </div>
+
+</div>
+
+<div class="container">
+
+    <h1>Search Analytics</h1>
+
+    {% if analytics %}
+
+    <table>
+
+        <tr>
+
+            <th>Skill</th>
+
+            <th>Total Searches</th>
+
+        </tr>
+
+        {% for row in analytics %}
+
+        <tr>
+
+            <td>{{ row[0] }}</td>
+
+            <td>{{ row[1] }}</td>
+
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+    {% else %}
+
+    <div class="no-data">
+
+        No Analytics Data Available
+
+    </div>
+
+    {% endif %}
+
+</div>
+
+<script src="{{ url_for(
+'static',
+filename='script.js'
+) }}"></script>
+
+</body>
+
+</html>
