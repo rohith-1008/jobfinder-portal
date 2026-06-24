@@ -22,57 +22,6 @@ This project demonstrates real-world integration of Flask, REST APIs, Snowflake 
 
 ---
 
-## 📸 Project Preview
-
-### 🏠 Home Page
-
-Add Screenshot Here
-
-```text
-images/home.png
-```
-
-### 📊 Dashboard
-
-Add Screenshot Here
-
-```text
-images/dashboard.png
-```
-
-### 📈 Analytics
-
-Add Screenshot Here
-
-```text
-images/analytics.png
-```
-
-### 💾 Saved Jobs
-
-Add Screenshot Here
-
-```text
-images/saved-jobs.png
-```
-
----
-
-## 🎥 Project Demo
-
-Record a short demo using OBS Studio or ScreenToGif and place it inside:
-
-```text
-images/jobfinder-demo.gif
-```
-
-Then uncomment the line below:
-
-```markdown
-![Project Demo](images/jobfinder-demo.gif)
-```
-
----
 
 ## ✨ Features
 
@@ -329,25 +278,12 @@ Through this project I gained hands-on experience with:
 
 B.Tech – Artificial Intelligence & Machine Learning
 
-📌 Full Stack Developer | AI & ML Enthusiast
-
 ### GitHub
 
 https://github.com/rohith-1008
 
-### LinkedIn
-
-(Add Your LinkedIn URL)
-
 ---
 
-## ⭐ Support
-
-If you found this project useful, consider giving it a ⭐ on GitHub.
-
-It helps the project reach more developers and motivates future improvements.
-
----
 
 <p align="center">
 
